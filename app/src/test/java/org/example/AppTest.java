@@ -8,4 +8,35 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class AppTest {
 
+    ForLoop testloop = new ForLoop();
+    UsingStream teststream = new UsingStream();
+
+    int[] testlist = {5, 10, 18, 5, 2, 1, 16};
+
+    @Test
+    void testMaximums(){
+        assertEquals(18, testloop.maximumUsingForLoop(testlist));
+        assertEquals(18, teststream.maximumUsingStream(testlist));
+    }
+
+    @Test
+    void testMinimums(){
+        assertEquals(1, testloop.minimumUsingForLoop(testlist));
+        assertEquals(1, teststream.minimumUsingStream(testlist));
+    }
+
+     @Test
+    void testSums(){
+        assertEquals(57, testloop.sumUsingForLoop(testlist));
+        assertEquals(57, teststream.sumUsingStream(testlist));
+    }
+
+     @Test
+    void testAverages(){
+        double expectedAverage = 59 / testlist.length;
+
+        assertEquals(expectedAverage, testloop.averageUsingForLoop(testlist));
+        assertEquals(expectedAverage, teststream.averageUsingStream(testlist));
+    }
+
 }

@@ -15,7 +15,7 @@ public class ForLoop {
     public int minimumUsingForLoop(int[] nums) {
         int min = nums[0];
         for (int num : nums){
-            if(num > min){
+            if(num < min){
                 min = num;
             }
         }
